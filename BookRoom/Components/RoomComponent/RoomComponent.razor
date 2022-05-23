@@ -1,0 +1,25 @@
+﻿@inherits RoomModel;
+
+<table class="table">
+    <thead>
+        <tr>
+            <div>Room: @CurrentRoom.Name</div>
+            <div>Flor: @CurrentRoom.Floor</div>
+            <div>Description: @CurrentRoom.Description</div>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bookInfo in bookService.GetRoomBooksInfo(@Date, @RoomId))
+        {
+            <tr>
+                <div class="border border-success">
+                    Time: @bookInfo.StartTime.ToString("HH:MM", Culture) - @bookInfo.EndTime.ToString("HH:MM", Culture) <br/>
+                    Subject: @bookInfo.Subject <br/>
+                    Owner: @bookInfo.CreatedBy
+                </div>
+                <br />
+            </tr>
+        }
+    </tbody>
+</table>
+

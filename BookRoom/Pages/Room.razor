@@ -1,0 +1,16 @@
+﻿@page "/schedule/room"
+@page "/schedule/room/{roomId}"
+@page "/schedule/room/{roomId:int}/{date:datetime}"
+@using BookRoom.Components.RoomComponent
+
+<PageTitle>Room</PageTitle>
+<RoomComponent RoomId="@RoomId" Date="@Date"/>
+
+@code {
+
+    [Parameter]
+    public int RoomId { get; set; }
+
+    [Parameter]
+    public DateTime Date { get; set; }
+}

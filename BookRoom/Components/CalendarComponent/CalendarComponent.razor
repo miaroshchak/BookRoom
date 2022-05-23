@@ -1,0 +1,39 @@
+﻿@inherits CalendarModel;
+
+<table class="table">
+    <thead>
+        <tr>
+            @foreach (var item in DaysOfWeek)
+            {
+                <th>
+                    <div>@Culture.DateTimeFormat.GetDayName(@item.DayOfWeek)</div>
+                    <div>@item.Date.ToString("d MMM yyyy", Culture)</div>
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in DaysOfWeek)
+            {
+                <td>
+                    @foreach (var room in roomService.GetRooms())
+                    {
+                        <div @onclick="() => NavigateToToRoom(room.Id, item)">
+                            <div><strong>@room.Name</strong></div>
+                            @foreach (var bookInfo in bookService.GetRoomBooksInfo(@item.Date, room.Id))
+                            {
+                                <div class="border border-success">
+                                    @bookInfo.StartTime.ToString("HH:MM", Culture) - @bookInfo.EndTime.ToString("HH:MM", Culture)
+                                </div>
+                            }
+                            <br />
+                        </div>
+                    }
+                </td>
+            }
+        </tr>
+    </tbody>
+</table>
+
+
