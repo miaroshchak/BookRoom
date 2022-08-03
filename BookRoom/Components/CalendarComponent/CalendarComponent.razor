@@ -21,7 +21,7 @@
                     {
                         <div @onclick="() => NavigateToToRoom(room.Id, item)">
                             <div><strong>@room.Name</strong></div>
-                            @foreach (var bookInfo in bookService.GetRoomBooksInfo(@item.Date, room.Id))
+                            @foreach (var bookInfo in bookService.GetRoomBooks(@item.Date, room.Id))
                             {
                                 <div class="border border-success">
                                     @bookInfo.StartTime.ToString("HH:MM", Culture) - @bookInfo.EndTime.ToString("HH:MM", Culture)

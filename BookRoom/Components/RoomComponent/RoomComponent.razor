@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var bookInfo in bookService.GetRoomBooksInfo(@Date, @RoomId))
+        @foreach (var bookInfo in bookService.GetRoomBooks(@Date, @RoomId))
         {
             <tr>
                 <div class="border border-success">

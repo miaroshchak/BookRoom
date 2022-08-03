@@ -20,7 +20,7 @@ namespace BookRoom.Components.RoomComponent
 
 
         [Inject]
-        protected IBookService bookService { get; set; } = default!;
+        protected IRoomBookService bookService { get; set; } = default!;
 
         [Inject]
         protected IRoomService roomService { get; set; } = default!;

@@ -1,4 +1,4 @@
-namespace BookRoom.Model
+namespace BookRoom.Data
 {
     public class WeatherForecast
     {
