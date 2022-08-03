@@ -6,6 +6,13 @@ namespace BookRoom.Services
 {
     public class RoomBookService : IRoomBookService
     {
+        private readonly ApplicationDbContext _dbContext;
+
+        public RoomBookService(ApplicationDbContext dbContext) 
+        {
+                _dbContext = dbContext;
+        }
+
         public List<RoomBook> GetRoomBooks(DateTime date, int roomId)
         {
             var list = new List<RoomBook>();
@@ -35,6 +42,11 @@ namespace BookRoom.Services
             });
 
             return list.OrderBy(x => x.StartTime).ToList();
+        }
+
+        public List<RoomBook> GetRoomBooks(DateTime date, int roomId, int hour)
+        {
+            throw new NotImplementedException();
         }
     }
 }

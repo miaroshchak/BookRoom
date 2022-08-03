@@ -1,4 +1,4 @@
-﻿using BookRoom.Model;
+﻿using BookRoom.Data;
 using BookRoom.Infrastructure.Extensions;
 using BookRoom.Services.Interface;
 
@@ -6,11 +6,11 @@ namespace BookRoom.Services
 {
     public class BookService : IBookService
     {
-        public List<RoomBooks> GetRoomBooksInfo(DateTime date, int roomId)
+        public List<RoomBook> GetRoomBooksInfo(DateTime date, int roomId)
         {
-            var list = new List<RoomBooks>();
+            var list = new List<RoomBook>();
             
-            list.Add(new RoomBooks
+            list.Add(new RoomBook
             {
                 StartTime = date.SetTime(10, 00),
                 EndTime = date.SetTime(11,00),
@@ -18,7 +18,7 @@ namespace BookRoom.Services
                 CreatedBy = "Myroslav Yaroshchak"
             });
 
-            list.Add(new RoomBooks
+            list.Add(new RoomBook
             {
                 StartTime = date.SetTime(13, 00),
                 EndTime = date.SetTime(13, 30),
@@ -26,7 +26,7 @@ namespace BookRoom.Services
                 CreatedBy = "Myroslav Yaroshchak"
             });
 
-            list.Add(new RoomBooks
+            list.Add(new RoomBook
             {
                 StartTime = date.SetTime(15, 00),
                 EndTime = date.SetTime(17, 00),

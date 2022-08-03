@@ -22,8 +22,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddSingleton<IRoomBookService, RoomBookService>();
-builder.Services.AddSingleton<IRoomService, RoomService>();
+builder.Services.AddScoped<IRoomBookService, RoomBookService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
 
 var app = builder.Build();
 

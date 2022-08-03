@@ -1,9 +1,9 @@
-﻿using BookRoom.Model;
+﻿using BookRoom.Data;
 
 namespace BookRoom.Services.Interface
 {
     public interface IBookService
     {
-        public List<RoomBooks> GetRoomBooksInfo(DateTime date, int roomId);
+        public List<RoomBook> GetRoomBooksInfo(DateTime date, int roomId);
     }
 }
