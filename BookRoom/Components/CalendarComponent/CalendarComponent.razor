@@ -17,7 +17,7 @@
             @foreach (var item in DaysOfWeek)
             {
                 <td>
-                    @foreach (var room in roomService.GetRooms())
+                    @foreach (var room in GetRooms())
                     {
                         <div @onclick="() => NavigateToToRoom(room.Id, item)">
                             <div><strong>@room.Name</strong></div>

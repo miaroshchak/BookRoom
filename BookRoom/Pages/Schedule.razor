@@ -1,5 +1,6 @@
 ﻿@page "/"
 @page "/schedule"
+@page "/schedule/room/{roomId:int}"
 
 @using BookRoom.Components
 @using BookRoom.Components.CalendarComponent
@@ -9,6 +10,12 @@
 <h3>Schedule</h3>
 
 <AuthorizeView>
-<CalendarComponent></CalendarComponent>
+<CalendarComponent RoomId="@RoomId"></CalendarComponent>
 </AuthorizeView>
+
+@code {
+
+    [Parameter]
+    public int RoomId { get; set; }
+}
 

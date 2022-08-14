@@ -1,0 +1,14 @@
+﻿@inherits RoomsModel;
+
+<div class="row">
+    @foreach (var room in roomService.GetRooms())
+    {
+        <div class="col-md-3 bloc-item">
+            <div @onclick="() => NavigateToScheduleRoom(room.Id)">
+                <h4>@room.Name</h4>
+                <br/>
+                <span calss = "text-align: left">@room.Description</span>
+            </div>
+        </div>
+    }
+</div>

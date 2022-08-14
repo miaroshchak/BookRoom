@@ -4,8 +4,8 @@ namespace BookRoom.Services.Interface
 {
     public interface IRoomService
     {
-        public List<Room> GetRooms();
+        List<Room> GetRooms();
 
-        public Room GetRoom(int id);
+        Room GetRoom(int id);
     }
 }
